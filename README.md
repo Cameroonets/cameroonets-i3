@@ -6,13 +6,15 @@
 
 Чтобы всё работало точно так же, как у меня, установите следующие программы:
 
-* **Оконный менеджер:** `i3-wm`
-* **Композитор (анимации и скругления):** `picom-ftlabs-git` (из AUR)
+* **Оконный менеджер и оболочка:** `i3-wm` `xfce4`
+* **Композитор (анимации и скругления):** `picom-ftlabs-git` (установить из AUR через `yay`)
+* **Автогенератор цветов:** `wallust`
 * **Эмулятор терминала:** `kitty`
-* **Управление яркостью:** `brightnessctl`
-* **Управление звуком:** `wireplumber` (или `pipewire-pulse`)
-* **Смена раскладки:** `xorg-setxkbmap`
 * **Менеджер уведомлений:** `dunst`
+* **Управление обоями:** `nitrogen`
+* **Смена раскладки:** `xorg-setxkbmap`
+* **Инструмент для скриншотов:** `flameshot`
+* **Автотайлинг:** `autotiling`
 
 ## ⌨️ Основные горячие клавиши
 
@@ -22,5 +24,5 @@
 * `Mod4 + Space` — Закрыть уведомление Dunst
 
 
-pacman: flameshot alacritty kitty dunst feh rofi
-aur: picom-ftlabs-git nitrogen
+* pacman: `flameshot alacritty kitty dunst feh rofi autotiling`
+* aur: `picom-ftlabs-git nitrogen`
