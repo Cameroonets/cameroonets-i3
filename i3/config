@@ -25,12 +25,19 @@ exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144.00
 exec --no-startup-id flameshot &
 # Автоматическое разделение окон в стиле Hyprland
 exec_always --no-startup-id autotiling
+exec --no-startup-id tg-ws-proxy &
 
 # Фокус следует за курсором мыши (как в Hyprland по умолчанию)
 focus_follows_mouse yes
 
 # Автоматически переводить фокус на только что открывшееся окно
 force_focus_wrapping no
+
+# Перемещение окон с зажатым SUPER и Левой Кнопкой Мыши (LMB)
+floating_modifier $mod
+
+# Изменение размера с зажатым SUPER и Правой Кнопкой Мыши (RMB)
+# (В i3wm это работает автоматически, если настроен floating_modifier)
 
 #################
 ### MY HOTKEY ###
