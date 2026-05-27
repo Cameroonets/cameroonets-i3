@@ -1,0 +1,163 @@
+###############################################################################
+# i3wm CONFIGURATION (Converted from Hyprland)
+###############################################################################
+
+# Set "Windows" key as main modifier
+set $mod Mod4
+
+# Font for window titles and bar
+font pango:DejaVu Sans Mono 8
+
+###################
+### AUTOSTART   ###
+###################
+# Автозапуск необходимых утилит
+exec --no-startup-id dunst &
+exec_always --no-startup-id picom -b
+exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec_always --no-startup-id feh --bg-fill ~/Wallpaper/gray.jpg
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144.00
+
+#################
+### MY HOTKEY ###
+#################
+
+# Увеличение и уменьшение яркости (Замена bind на bindsym)
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# Swap window (Перемещение окон в i3 делается через move)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Переключение на предыдущий воркспейс
+bindsym Mod1+Tab workspace back_and_forth
+
+# Resize active window (В i3 для этого лучше использовать режим resize, 
+# но для сохранения ваших биндов сделано прямое изменение шага)
+bindsym $mod+l resize grow width 70 px or 70 ppt
+bindsym $mod+h resize shrink width 70 px or 70 ppt
+bindsym $mod+k resize shrink height 70 px or 70 ppt
+bindsym $mod+j resize grow height 70 px or 70 ppt
+
+# Fullscreen (В i3 есть один универсальный режим на весь экран)
+bindsym $mod+z fullscreen toggle
+bindsym $mod+x fullscreen toggle
+
+# Main binds (Запуск приложений)
+bindsym $mod+i exec --no-startup-id i3lock
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+t exec --no-startup-id kitty
+bindsym $mod+g exec --no-startup-id steam
+bindsym $mod+d exec --no-startup-id vesktop
+bindsym $mod+n exec --no-startup-id obs
+
+# Перезапуск статус-бара (Для X11 адаптировано под i3bar, если используете её)
+bindsym $mod+Shift+o restart
+
+# Screenshot (Используется универсальная утилита scrot или flameshot для X11)
+# Требуется: sudo pacman -S flameshot
+bindsym Print exec --no-startup-id flameshot gui
+
+# Управление уведомлениями Dunst
+bindsym $mod+space exec --no-startup-id dunstctl close
+bindsym $mod+Shift+space exec --no-startup-id dunstctl close-all
+bindsym $mod+grave exec --no-startup-id dunstctl history-pop
+
+#################
+### i3 BINDS  ###
+#################
+
+# Основные системные бинды
+bindsym $mod+Return exec kitty
+bindsym $mod+c kill
+bindsym $mod+Shift+e exec "i3-nagbar -t text -m 'Выйти из i3?' -B 'Да' 'i3-msg exit'"
+
+# Запуск Yazi во всплывающем (floating) окне терминала
+bindsym $mod+e exec --no-startup-id kitty --class floating_yazi -e yazi
+for_window [class="floating_yazi"] floating enable, resize set 900 600, move position center
+
+# Выбор обоев через nitrogen
+bindsym $mod+w exec nitrogen
+
+# Переключение плавающего режима
+bindsym $mod+v floating toggle
+
+# Меню запуска приложений (Рекомендуется установить rofi или dmenu)
+# Требуется: sudo pacman -S rofi
+bindsym $mod+r exec --no-startup-id rofi -show drun
+
+# Разделение окон (Аналог dwindle/split из Hyprland)
+bindsym $mod+p layout toggle split
+
+# Move focus with Arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move active window to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Scratchpad (Аналог special workspace в Hyprland)
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+
+# Мультимедийные клавиши громкости и яркости дублирующие
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# Управление плеером (Требуется playerctl)
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+###################
+### STATUS BAR  ###
+###################
+# Стандартная нижняя панель i3wm
+# bar {
+#         status_command i3status
+#         position bottom
+# }
+
+# Отключаем встроенные рамки окон i3, чтобы дать волю Picom
+default_border none
+default_floating_border none
+
+# Или альтернативный вариант (если первая команда не сработала):
+# new_window none
+
+# Настройка отступов (gaps)
+gaps inner 12
+gaps outer 4
+
+# Показывать отступы, даже если на рабочем столе всего одно окно
+smart_gaps off

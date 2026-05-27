@@ -1,0 +1,19 @@
+[global]
+    # Расположение (вниз, вправо)
+    origin = bottom-right
+    
+    # Отступы от краев экрана (вправо: 20, вниз: 60)
+    offset = 20x60
+    
+    # Автозакрытие через 5 секунд
+    notification_limit = 0
+    timeout = 5
+    
+    # Геометрия и дизайн
+    width = 300
+    height = 110
+    corner_radius = 8
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+    frame_width = 2
