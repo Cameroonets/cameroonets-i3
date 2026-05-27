@@ -1,0 +1,15 @@
+backend = "kmeans"
+color_space = "labmixed"
+threshold = 20
+filter = "light16"
+saturation = 30
+
+[templates]
+# 'hypr' и 'waybar' — это уникальные ключи (названия) для шаблонов
+hypr = { src = "hyprland.conf", dst = "~/.config/hypr/wallust-colors.conf" }
+waybar = { src = "waybar.css", dst = "~/.config/waybar/wallust-colors.css" }
+kitty = { src = "kitty.conf", dst = "~/.config/kitty/wallust-colors.conf" }
+mango = { src = "mango.conf", dst = "~/.config/mango/wallust-colors.conf" }
+
+[entry]
+command = "pkill -USR2 waybar" 

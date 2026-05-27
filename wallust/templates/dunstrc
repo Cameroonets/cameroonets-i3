@@ -1,0 +1,25 @@
+[global]
+    origin = bottom-right
+    offset = 20x60
+    layer = overlay
+    default_timeout = 5000
+    width = 300
+    height = 110
+    corner_radius = 8
+    frame_width = 2
+    font = Sans 10
+
+[urgency_low]
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    frame_color = "{{color4}}"
+
+[urgency_normal]
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    frame_color = "{{color1}}"
+
+[urgency_high]
+    background = "{{background}}"
+    foreground = "{{foreground}}"
+    frame_color = "{{color5}}"

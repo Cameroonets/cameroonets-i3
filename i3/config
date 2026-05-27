@@ -2,6 +2,9 @@
 # i3wm CONFIGURATION (Converted from Hyprland)
 ###############################################################################
 
+# Подгружаем палитру цветов, созданную Wallust
+include i3-colors
+
 # Set "Windows" key as main modifier
 set $mod Mod4
 
@@ -15,9 +18,19 @@ font pango:DejaVu Sans Mono 8
 exec --no-startup-id dunst &
 exec_always --no-startup-id picom -b
 exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
-exec_always --no-startup-id feh --bg-fill ~/Wallpaper/gray.jpg
+exec --no-startup-id nitrogen --restore &
+# exec_always --no-startup-id feh --bg-fill ~/Wallpaper/gray.jpg
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144.00
+exec --no-startup-id flameshot &
+# Автоматическое разделение окон в стиле Hyprland
+exec_always --no-startup-id autotiling
+
+# Фокус следует за курсором мыши (как в Hyprland по умолчанию)
+focus_follows_mouse yes
+
+# Автоматически переводить фокус на только что открывшееся окно
+force_focus_wrapping no
 
 #################
 ### MY HOTKEY ###
@@ -161,3 +174,8 @@ gaps outer 4
 
 # Показывать отступы, даже если на рабочем столе всего одно окно
 smart_gaps off
+
+# Жесткое исправление для панели XFCE
+for_window [class="Xfce4-panel"] floating enable, border none, move dock
+for_window [window_type="dock"] floating enable, border none, move dock
+

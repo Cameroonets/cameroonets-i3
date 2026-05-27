@@ -1,19 +1,25 @@
 [global]
-    # Расположение (вниз, вправо)
     origin = bottom-right
-    
-    # Отступы от краев экрана (вправо: 20, вниз: 60)
     offset = 20x60
-    
-    # Автозакрытие через 5 секунд
-    notification_limit = 0
-    timeout = 5
-    
-    # Геометрия и дизайн
+    layer = overlay
+    default_timeout = 5000
     width = 300
     height = 110
     corner_radius = 8
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#89b4fa"
     frame_width = 2
+    font = Sans 10
+
+[urgency_low]
+    background = "#282827"
+    foreground = "#EBECEA"
+    frame_color = "#3A462E"
+
+[urgency_normal]
+    background = "#282827"
+    foreground = "#EBECEA"
+    frame_color = "#23281A"
+
+[urgency_high]
+    background = "#282827"
+    foreground = "#EBECEA"
+    frame_color = "#A0B77D"
