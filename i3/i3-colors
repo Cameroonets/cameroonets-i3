@@ -1,9 +1,9 @@
 # Цвета, сгенерированные Wallust
-set $wall_bg #282827
-set $wall_fg #EBECEA
-set $wall_primary #23281A
-set $wall_secondary #3A462E
-set $wall_urgent #A0B77D
+set $wall_bg #252224
+set $wall_fg #FAF6F1
+set $wall_primary #8A2A33
+set $wall_secondary #B57439
+set $wall_urgent #B57439
 
 # Применяем цвета к рамкам окон i3
 client.focused          $wall_primary   $wall_primary $wall_fg $wall_primary   $wall_primary

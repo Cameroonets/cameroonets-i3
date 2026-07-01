@@ -10,16 +10,16 @@
     font = Sans 10
 
 [urgency_low]
-    background = "#282827"
-    foreground = "#EBECEA"
-    frame_color = "#3A462E"
+    background = "#252224"
+    foreground = "#FAF6F1"
+    frame_color = "#B57439"
 
 [urgency_normal]
-    background = "#282827"
-    foreground = "#EBECEA"
-    frame_color = "#23281A"
+    background = "#252224"
+    foreground = "#FAF6F1"
+    frame_color = "#8A2A33"
 
 [urgency_high]
-    background = "#282827"
-    foreground = "#EBECEA"
-    frame_color = "#A0B77D"
+    background = "#252224"
+    foreground = "#FAF6F1"
+    frame_color = "#B57439"

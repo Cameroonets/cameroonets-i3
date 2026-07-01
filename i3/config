@@ -17,15 +17,16 @@ font pango:DejaVu Sans Mono 8
 # Автозапуск необходимых утилит
 exec --no-startup-id dunst &
 exec_always --no-startup-id picom -b
-exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec --no-startup-id setxkbmap -layout us,ru -option "grp:alt_shift_toggle"
 exec --no-startup-id nitrogen --restore &
-# exec_always --no-startup-id feh --bg-fill ~/Wallpaper/gray.jpg
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144.00
 exec --no-startup-id flameshot &
 # Автоматическое разделение окон в стиле Hyprland
 exec_always --no-startup-id autotiling
 exec --no-startup-id tg-ws-proxy &
+#хуйня короч чтобы бинды не пропадали а то в кечи такая залупа была ну хз хз
+exec --no-startup-id xkbset -sticky -twokey -latch -lock
+
 
 # Фокус следует за курсором мыши (как в Hyprland по умолчанию)
 focus_follows_mouse yes
@@ -94,7 +95,7 @@ bindsym $mod+grave exec --no-startup-id dunstctl history-pop
 # Основные системные бинды
 bindsym $mod+Return exec kitty
 bindsym $mod+c kill
-bindsym $mod+Shift+e exec "i3-nagbar -t text -m 'Выйти из i3?' -B 'Да' 'i3-msg exit'"
+bindsym $mod+Shift+e exec xfce4-session-logout
 
 # Запуск Yazi во всплывающем (floating) окне терминала
 bindsym $mod+e exec --no-startup-id kitty --class floating_yazi -e yazi
