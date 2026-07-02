@@ -15,6 +15,7 @@ kitty = { src = "kitty.conf", dst = "~/.config/kitty/wallust-colors.conf" }
 mango = { src = "mango.conf", dst = "~/.config/mango/wallust-colors.conf" }
 dunst = { src = "dunstrc", dst = "~/.config/dunst/dunstrc" }
 i3 = { src = "i3-colors", dst = "~/.config/i3/i3-colors" }
+alacritty = { src = "alacritty.json", dst = "~/.config/alacritty/colors.toml" }
 
 [entry]
 command = "pkill -USR2 waybar" 

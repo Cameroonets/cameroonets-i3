@@ -69,9 +69,10 @@ bindsym $mod+z fullscreen toggle
 bindsym $mod+x fullscreen toggle
 
 # Main binds (Запуск приложений)
+# терминал на выбор: kitty/alacritty
 bindsym $mod+i exec --no-startup-id i3lock
 bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+t exec --no-startup-id kitty
+bindsym $mod+t exec --no-startup-id alacritty
 bindsym $mod+g exec --no-startup-id steam
 bindsym $mod+d exec --no-startup-id vesktop
 bindsym $mod+n exec --no-startup-id obs
