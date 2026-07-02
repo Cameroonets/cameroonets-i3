@@ -1,0 +1,25 @@
+# Шаблон цветов Wallust для Alacritty
+
+[colors.primary]
+background = '#252224'
+foreground = '#FAF6F1'
+
+[colors.normal]
+black   = '#514E50'
+red     = '#8A2A33'
+green   = '#922D31'
+yellow  = '#B57439'
+blue    = '#B57439'
+magenta = '#B57439'
+cyan    = '#B57439'
+white   = '#F0E9E3'
+
+[colors.bright]
+black   = '#A8A39F'
+red     = '#A1303B'
+green   = '#A22F33'
+yellow  = '#F19B4C'
+blue    = '#F19B4C'
+magenta = '#F19B4C'
+cyan    = '#F19B4C'
+white   = '#F0E9E3'
